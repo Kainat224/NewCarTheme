@@ -104,10 +104,10 @@
             </label>
         </div>
         </div>
-        <input class="my-2" type="file" name="avatar">
+        <input class="mt-3 ml-3" type="file" name="avatar">
     </fieldset>
     <div class="row mb-3">
-        <div class="col-sm-10 offset-sm-2">
+        <div class="col-sm-10">
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="checkbox" id="gridCheck1">
             <label class="form-check-label" for="gridCheck1">
@@ -121,7 +121,6 @@
     </form>
 
 </div>
-
 
      
       <?php get_footer(); ?>
