@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+body .container {
+  max-width: 1240px;
+}
+.exb-top-tag {
+  width: 1440px;
+  
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: #E7232C;
+  text-align: center;
+}
+.exb-top-tag p {
+  margin: 0;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+color: #FFFFFF;
+}
+.exb-top-tag p a {
+  color: #fff;
+}
+.exb-secondary-header {
+background: #3D3E42;
+}
+.exb-secondary-header ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: wrap;
+  gap: 20px;
+  list-style: none;
+}
+.exb-secondary-header ul.align-right {
+  justify-content: flex-end;
+}
+.exb-secondary-header ul li:not(:first-child):before {
+    content: "|";
+    position: absolute;
+    left: -12px;
+    color: #fff;
+    font-size: 14px;
+}
+.exb-secondary-header ul li {
+    line-height: 35px;
+    position: relative;
+}
+.exb-secondary-header ul li a {
+  color: #fff;
+  text-decoration: none;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+}
+header {
+  height: 70px;
+  background: #fff;
+  border-bottom: 1px solid #f7f7f7;
+}
+header ul.navbar-nav {
+    justify-content: space-between;
+    width: 100%;
+}
+header ul.navbar-nav li.nav-item.logo {
+  width: 300px;
+  text-align: center;
+}
+header .navbar {
+  padding: 0;
+}
+header ul.navbar-nav li.nav-item a {
+  line-height: 70px;
+  padding: 0;
+  font-weight: 400;
+  font-size: 14px;
+  color: #3D3E42;
+}
+header .exb-mini-menu ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+}
+header .exb-mini-menu {
+    min-width: 160px;
+    padding: 0 0 0 25px;
+}
+
+
+footer {
+  background: #FAF9F7;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+form.newsletter-form {
+    max-width: 787px;
+    margin: 0 auto;
+    width: 100%;
+}
+form.newsletter-form h2 {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+form.newsletter-form .newsletter-field {
+    display: flex;
+    position: relative;
+}
+form.newsletter-form .newsletter-field input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #DEDAD8;
+    border-radius: 4px;
+}
+form.newsletter-form .newsletter-field button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: none;
+    background: transparent;
+    padding: 0 20px;
+    z-index: 2;
+    font-family: 'Sentient';
+    font-weight: 400;
+    font-size: 16px;
+    color: #9FABC4;
+}
+footer .social-links {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 20px 0 0 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+.footer-menu-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  border-bottom: 1px solid #DEDAD8;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+.footer-menu-container ul {
+  padding: 0;
+  margin: 50px 0 0 0;
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+.footer-menu-container ul li a {
+  font-family: 'Sentient';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+text-decoration: none;
+}
+.footer-menu-container ul li h3 {
+  font-family: 'Nanum Myeongjo', serif;
+font-style: normal;
+font-weight: 800;
+font-size: 20px;
+line-height: 25px;
+color: #151515;
+}
+footer p {
+    font-family: 'Sentient';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    margin: 0;
+}
+footer .copyright-menu {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 20px;
+}
+footer .copyright-menu li a {
+  text-decoration: none;
+  font-family: 'Sentient';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+}
+
+@media all and (min-width: 992px) {
+.mobile-logo {
+  display: none;
+}
+}
+@media all and (max-width:991px) {
+  header button.navbar-toggler {
+      background: #9fabc4;
+      width: 50px;
+      height: 45px;
+      padding: 0;
+      border-radius: 4px;
+  }
+  header button.navbar-toggler span.navbar-toggler-icon {
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      position: relative;
+      height: 22px;
+      display: block;
+      margin: -2px auto 0;
+  }
+  header button.navbar-toggler span.navbar-toggler-icon:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #fff;
+      top: 50%;
+  }
+  header {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  header .navbar {
+    justify-content: space-between;
+  }
+  header button.navbar-toggler {
+    position: absolute;
+    right: 150px;
+    top: -8px;
+    z-index: 2;
+}
+header .exb-mini-menu {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  z-index: 2;
+}
+.exb-secondary-header ul,
+.exb-secondary-header ul.align-right {
+  justify-content: center;
+}
+.exb-secondary-header ul li {
+  line-height: normal;
+}
+.exb-secondary-header {
+  padding-top: 5px;
+  padding-bottom: 8px;
+}
+header ul.navbar-nav li.nav-item.logo {
+  display: none;
+}
+header ul.navbar-nav li.nav-item a {
+  line-height: 45px;
+}
+header ul.navbar-nav {
+    border-top: 1px solid #e5e5e5;
+    margin-top: 22px;
+}
+
+
+}
+@media all and (max-width: 767px) {
+
+footer p {
+  text-align: center;
+}
+footer .copyright-menu {
+  justify-content: center;
+}
+
+.exb-tab-header {
+  flex-flow: column-reverse;
+}
+
+
+
+}
+@media all and (max-width: 557px) {
+.exb-secondary-header ul li a,
+.exb-top-tag p {
+  font-size: 12px;
+}
+header .exb-mini-menu {
+    min-width: 100px;
+    padding: 0;
+}
+header .exb-mini-menu li a img {
+    width: 18px;
+}
+header button.navbar-toggler {
+    right: 119px;
+    top: -2px;
+    width: 40px;
+    height: 35px;
+}
+header button.navbar-toggler span.navbar-toggler-icon {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    height: 16px;
+    margin: -2px auto 0;
+    width: 22px;
+}
+header button.navbar-toggler span.navbar-toggler-icon:before {
+    height: 1px;
+}
+
+
+.footer-menu-container ul {
+  width: 50%;
+  flex-grow: 1;
+}
+.footer-menu-container ul li a,
+footer p,
+footer .copyright-menu li a {
+  font-size: 14px;
+}
+.footer-menu-container ul li h3 {
+  font-size: 18px;
+}
+.footer-menu-container {
+  flex-flow: wrap;
+  gap: 0;
+}
+}
+@media all and (max-width: 440px) {
+ 
+  .exb-secondary-header ul li a, .exb-top-tag p {
+    font-size: 10px;
+  }
+  a.mobile-logo img {
+    height: 22px;
+}
+}
