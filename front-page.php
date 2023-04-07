@@ -62,20 +62,20 @@
 
       <div class="container mb-5">
 
-<h1>Add Your Car! </h1>
+<h1 class="mb-4">Add Your Car! </h1>
 
 <form id="applicant-form" method="POST" action="<?php echo admin_url('admin-ajax.php');?>">
   <div class="row mb-3">
     <label for="carName" class="col-sm-2 col-form-label">Car Name</label>
     <div class="col-sm-10">
-      <input type="text" name="carName" class="form-control" id="carName">
+      <input type="text" name="post_title" class="form-control" id="carName">
     </div>
   </div>
 
   <div class="row mb-3">
     <label for="carPrice" class="col-sm-2 col-form-label">Car Price </label>
     <div class="col-sm-10">
-      <input type="text" name="carPrice" class="form-control" id="carPrice">
+      <input type="text" name="car_price" class="form-control" id="carPrice">
     </div>
   </div>
   
@@ -98,7 +98,7 @@
   <div class="row mb-3">
     <label for="priceValue" class="col-sm-2 col-form-label">Price</label>
     <div class="col-sm-10">
-      <input type="text" name="priceValue" class="form-control" id="priceValue">
+      <input type="text" name="price_value" class="form-control" id="priceValue">
     </div>
   </div>
 
@@ -119,7 +119,7 @@
   <div class="row mb-3">
     <label for="horsePower" class="col-sm-2 col-form-label">Horse Power</label>
     <div class="col-sm-10">
-      <input type="text" name="horsePower" class="form-control" id="horsePower">
+      <input type="text" name="horse_power" class="form-control" id="horsePower">
     </div>
   </div>
 
@@ -148,54 +148,18 @@
     </div>
   </div>
 
-<div class="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-    <input type="email" name="email" class="form-control" id="inputEmail3">
-    </div>
+  <div class="row mb-3">
+    <label for="seatingCapacity
+" class="col-sm-2 col-form-label">Seating Capacity
+</label>
+        <div class="col-sm-10">
+      <input type="text" name="seatingCapacity" class="form-control" id="seatingCapacity">
 </div>
-<div class="row mb-3">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-    <input type="password" name="pass" class="form-control" id="inputPassword3">
-    </div>
-</div>
-<fieldset class="row mb-3">
-    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-    <div class="col-sm-10">
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Male" checked>
-        <label class="form-check-label" for="gridRadios1">
-        Male
-        </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="FeMale">
-        <label class="form-check-label" for="gridRadios2">
-        FeMale
-        </label>
-    </div>
-    <div class="form-check disabled">
-        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="Other" disabled>
-        <label class="form-check-label" for="gridRadios3">
-        Other
-        </label>
-    </div>
-    </div>
-    
-</fieldset>
-<div class="row mb-3">
-    <div class="col-sm-10">
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="checkbox" id="gridCheck1">
-        <label class="form-check-label" for="gridCheck1">
-        Agree with policies
-        </label>
-    </div>
-    </div>
-</div>
+  </div>
+
+
 <input type="hidden" name="action" value="create_applicant">
-<button type="submit" class="btn btn-primary">Submit1</button>
+<button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 </div>

@@ -141,4 +141,44 @@ function create_applicant(){
   wp_send_json_success(array("POST" => $_POST, "FILES"=>$_FILES ));
 }
 
+//post from frontend
+
+if ( isset( $_POST['post_title'] ) ) {
+
+  // Create a new post object
+  $new_post = array(
+      'post_title'    => wp_strip_all_tags( $_POST['post_title'] ),
+      // 'post_content'  => $_POST['post_content'],
+      'post_type'     => 'car',
+      'post_status'   => 'publish',
+      'meta_input'    => array(
+          'car_price'  => wp_strip_all_tags( $_POST['car_price'] ),
+          'place' => wp_strip_all_tags( $_POST['place'] ),
+          'avatar'  => wp_strip_all_tags( $_POST['avatar'] ),
+          'price_value' => wp_strip_all_tags( $_POST['price_value'] ),
+          'dimensions' => wp_strip_all_tags( $_POST['dimensions'] ),
+          'displacement' => wp_strip_all_tags( $_POST['displacement'] ),
+          'horse_power' => wp_strip_all_tags( $_POST['horse_power'] ),
+          'fuelType' => wp_strip_all_tags( $_POST['fuelType'] ),
+          'fuelTankCapacity' => wp_strip_all_tags( $_POST['fuelTankCapacity'] ),
+          'topSpeed' => wp_strip_all_tags( $_POST['topSpeed'] ),
+          'seatingCapacity' => wp_strip_all_tags( $_POST['seatingCapacity'] ),
+      
+        ),
+  );
+
+  // Insert the post into the database
+  $post_id = wp_insert_post( $new_post );
+
+  // Redirect to the new post on success
+  if ( $post_id ) {
+      wp_redirect( get_permalink( $post_id ) );
+      exit;
+  }
+
+}
+
+
+
+
 ?>
