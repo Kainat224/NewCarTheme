@@ -34,7 +34,8 @@
               <div class="card-body">
                 <h5 class="card-title"><?php the_title(); ?></h5>
                 <p class="card-text text-success"><?php the_post_thumbnail(array(250, 250)); ?></p>
-                <h6 class="card-title"><?php the_excerpt(); ?></h6>
+                <h6 class="card-title"><?php the_field('car_price', get_the_id());?></h6>
+                <h6 class="card-title"><?php the_excerpt();?></h6>
                 <a href="<?php the_permalink(); ?>"><input type="button" value="Read More" ></a>
                 <button class="my-like-btn " data-post-id="<?php echo get_the_ID(); ?>"><i class="fa-sharp fa-regular fa-heart"></i></button>
                 <button class="dislike-btn" data-post-id="<?php echo get_the_ID(); ?>"><i  class="fa-regular fa-thumbs-down"></i>
@@ -64,12 +65,89 @@
 <h1>Add Your Car! </h1>
 
 <form id="applicant-form" method="POST" action="<?php echo admin_url('admin-ajax.php');?>">
-<div class="row mb-3">
-    <label for="inputFullName" class="col-sm-2 col-form-label">Main Title</label>
+  <div class="row mb-3">
+    <label for="carName" class="col-sm-2 col-form-label">Car Name</label>
     <div class="col-sm-10">
-    <input type="text" name="mainTitle" class="form-control" id="mainTitle">
+      <input type="text" name="carName" class="form-control" id="carName">
     </div>
-</div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="carPrice" class="col-sm-2 col-form-label">Car Price </label>
+    <div class="col-sm-10">
+      <input type="text" name="carPrice" class="form-control" id="carPrice">
+    </div>
+  </div>
+  
+  <div class="row mb-3">
+    <label for="place" class="col-sm-2 col-form-label">Place</label>
+    <div class="col-sm-10">
+      <input type="text" name="place" class="form-control" id="place">
+    </div>
+  </div>
+
+  <input class="mb-3" type="file" name="avatar">
+
+  <div class="row mb-3">
+    <label for="priceTitle" class="col-sm-2 col-form-label">Price Title </label>
+    <div class="col-sm-10">
+      <input type="text" name="priceTitle" class="form-control" id="priceTitle">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="priceValue" class="col-sm-2 col-form-label">Price</label>
+    <div class="col-sm-10">
+      <input type="text" name="priceValue" class="form-control" id="priceValue">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="dimensions" class="col-sm-2 col-form-label">Dimensions</label>
+    <div class="col-sm-10">
+      <input type="text" name="dimensions" class="form-control" id="dimensions">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="displacement" class="col-sm-2 col-form-label">Displacement</label>
+    <div class="col-sm-10">
+      <input type="text" name="displacement" class="form-control" id="displacement">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="horsePower" class="col-sm-2 col-form-label">Horse Power</label>
+    <div class="col-sm-10">
+      <input type="text" name="horsePower" class="form-control" id="horsePower">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="fuelType" class="col-sm-2 col-form-label">Fuel Type</label>
+    <div class="col-sm-10">
+      <input type="text" name="fuelType" class="form-control" id="fuelType">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="fuelTankCapacity
+" class="col-sm-2 col-form-label">Fuel Tank Capacity
+</label>
+    <div class="col-sm-10">
+      <input type="text" name="fuelTankCapacity" class="form-control" id="fuelTankCapacity">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="topSpeed
+" class="col-sm-2 col-form-label">Top Speed
+</label>
+    <div class="col-sm-10">
+      <input type="text" name="topSpeed" class="form-control" id="topSpeed">
+    </div>
+  </div>
+
 <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
@@ -104,7 +182,7 @@
         </label>
     </div>
     </div>
-    <input class="mt-3 ml-3" type="file" name="avatar">
+    
 </fieldset>
 <div class="row mb-3">
     <div class="col-sm-10">
