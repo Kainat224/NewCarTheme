@@ -26,10 +26,10 @@
         <div class="row">
           <div class="col-12 col-lg-6">
             <ul>
-              <li>
+              <li class="head-text-color">
               <?php the_field('phone_number', 13);?>
               </li>
-              <li>
+              <li class="head-text-color">
               <?php the_field('title', 13);?>
                 
               </li>
@@ -37,7 +37,9 @@
           </div>
           <div class="col-12 col-lg-6">
             <ul class="align-right">
-            <?php the_field('location', 13);?>
+              <li class="head-text-color">
+                <?php the_field('location', 13);?>
+              </li>            
             </ul>
           </div>
         </div>
