@@ -141,41 +141,68 @@ function create_applicant(){
   wp_send_json_success(array("POST" => $_POST, "FILES"=>$_FILES ));
 }
 
-//post from frontend
 
-if ( isset( $_POST['post_title'] ) ) {
 
-  // Create a new post object
-  $new_post = array(
-      'post_title'    => wp_strip_all_tags( $_POST['post_title'] ),
-      // 'post_content'  => $_POST['post_content'],
-      'post_type'     => 'car',
-      'post_status'   => 'publish',
-      'meta_input'    => array(
-          'car_price'  => wp_strip_all_tags( $_POST['car_price'] ),
-          'place' => wp_strip_all_tags( $_POST['place'] ),
-          'avatar'  => wp_strip_all_tags( $_POST['avatar'] ),
-          'price_value' => wp_strip_all_tags( $_POST['price_value'] ),
-          'dimensions' => wp_strip_all_tags( $_POST['dimensions'] ),
-          'displacement' => wp_strip_all_tags( $_POST['displacement'] ),
-          'horse_power' => wp_strip_all_tags( $_POST['horse_power'] ),
-          'fuelType' => wp_strip_all_tags( $_POST['fuelType'] ),
-          'fuelTankCapacity' => wp_strip_all_tags( $_POST['fuelTankCapacity'] ),
-          'topSpeed' => wp_strip_all_tags( $_POST['topSpeed'] ),
-          'seatingCapacity' => wp_strip_all_tags( $_POST['seatingCapacity'] ),
-      
-        ),
-  );
 
-  // Insert the post into the database
-  $post_id = wp_insert_post( $new_post );
+if(isset($_POST['action']) && $_POST['action'] == 'create_applicant'){
 
-  // Redirect to the new post on success
-  if ( $post_id ) {
-      wp_redirect( get_permalink( $post_id ) );
-      exit;
-  }
+    // Get the posted form data
+    $post_title = $_POST['post_title'];
+    $car_price = $_POST['car_price'];
+    $place = $_POST['place'];
+    $price_value = $_POST['price_value'];
+    $dimensions = $_POST['dimensions'];
+    $displacement = $_POST['displacement'];
+    $horse_power = $_POST['horse_power'];
+    $fuelType = $_POST['fuelType'];
+    $fuelTankCapacity = $_POST['fuelTankCapacity'];
+    $topSpeed = $_POST['topSpeed'];
+    $seatingCapacity = $_POST['seatingCapacity'];
+    $file = $_FILES['avatar'];
 
+    // Create the post object
+    $new_post = array(
+        'post_title'    => $post_title,
+        'post_status'   => 'publish',
+        'post_type'     => 'car'
+    );
+
+    // Insert the post into the database
+    $post_id = wp_insert_post($new_post);
+
+    // Set the custom fields for the post
+    update_field('car_price', $car_price, $post_id);
+    update_field('place', $place, $post_id);
+    update_field('price_title', $priceTitle, $post_id);
+    update_field('price_value', $price_value, $post_id);
+    update_field('dimensions', $dimensions, $post_id);
+    update_field('displacement', $displacement, $post_id);
+    update_field('horse_power', $horse_power, $post_id);
+    update_field('fuel_type', $fuelType, $post_id);
+    update_field('fuel_tank_capacity', $fuelTankCapacity, $post_id);
+    update_field('top_speed', $topSpeed, $post_id);
+    update_field('seating_capacity', $seatingCapacity, $post_id);
+
+    // Upload and set the featured image for the post
+    if($file){
+        $upload_dir = wp_upload_dir();
+        $file_name = basename($file['name']);
+        $file_path = $upload_dir['path'] . '/' . $file_name;
+        move_uploaded_file($file['tmp_name'], $file_path);
+        $attachment = array(
+            'post_mime_type' => $file['type'],
+            'post_title' => preg_replace('/\.[^.]+$/', '', $file_name),
+            'post_content' => '',
+            'post_status' => 'inherit',
+            'guid' => $upload_dir['url'] . '/' . $file_name
+        );
+        $attach_id = wp_insert_attachment($attachment, $file_path, $post_id);
+        set_post_thumbnail($post_id, $attach_id);
+    }
+
+    // Redirect to the homepage
+    wp_redirect(home_url());
+    exit;
 }
 
 

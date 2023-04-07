@@ -10,7 +10,7 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title"><?php the_title(); ?></h5>
-          <p class="card-text"><?php the_excerpt(); ?></p>
+          <p class="card-text"><?php the_field('place', get_the_id());?></p>
           <p class="card-text"><small class="text-body-secondary"><?php echo get_the_date(); ?></small></p>
         </div>
       </div>
@@ -24,8 +24,8 @@
     <h1><?php the_title(); ?></h1>
       <thead>
         <tr>
-          <th scope="col"><?php the_field('title', get_the_id());?></th>
-          <th scope="col"><?php the_field('price', get_the_id());?></th>
+          <th scope="col">Price</th>
+          <th scope="col"><?php the_field('price_value', get_the_id());?></th>
           <th scope="col">Fuel Type</th>
           <th scope="col"><?php the_field('fuel_type', get_the_id());?></th>
         </tr>

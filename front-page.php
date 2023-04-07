@@ -35,7 +35,7 @@
                 <h5 class="card-title"><?php the_title(); ?></h5>
                 <p class="card-text text-success"><?php the_post_thumbnail(array(250, 250)); ?></p>
                 <h6 class="card-title"><?php the_field('car_price', get_the_id());?></h6>
-                <h6 class="card-title"><?php the_excerpt();?></h6>
+                <h6 class="card-title"><?php the_field('place', get_the_id());?></h6>
                 <a href="<?php the_permalink(); ?>"><input type="button" value="Read More" ></a>
                 <button class="my-like-btn " data-post-id="<?php echo get_the_ID(); ?>"><i class="fa-sharp fa-regular fa-heart"></i></button>
                 <button class="dislike-btn" data-post-id="<?php echo get_the_ID(); ?>"><i  class="fa-regular fa-thumbs-down"></i>
@@ -88,12 +88,7 @@
 
   <input class="mb-3" type="file" name="avatar">
 
-  <div class="row mb-3">
-    <label for="priceTitle" class="col-sm-2 col-form-label">Price Title </label>
-    <div class="col-sm-10">
-      <input type="text" name="priceTitle" class="form-control" id="priceTitle">
-    </div>
-  </div>
+  
 
   <div class="row mb-3">
     <label for="priceValue" class="col-sm-2 col-form-label">Price</label>
